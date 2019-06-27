@@ -1,0 +1,43 @@
+{% extends "log/base.html" %}
+{% block body_block %}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to the Djungle !</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+    {% else %}
+        <h2>Register or Login if you'd like to</h2>
+    {% endif %}
+
+
+<div id="container">
+  <script src="https://code.highcharts.com/highcharts.src.js"></script>
+  <script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Historic World Population by Region'
+        },
+        xAxis: {
+            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
+        },
+        series: [{
+            name: 'Year 1800',
+            data: [107, 31, 635, 203, 2]
+        }, {
+            name: 'Year 1900',
+            data: [133, 156, 947, 408, 6]
+        }, {
+            name: 'Year 2012',
+            data: [1052, 954, 4250, 740, 38]
+        }]
+    });
+  </script>
+</div>
+
+
+  </div>
+</div>
+{% endblock %}
