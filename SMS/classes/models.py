@@ -58,3 +58,17 @@ class Classes(models.Model):
 	class Meta:
 		unique_together = ('class_no', 'class_grade',)
 		db_table = "classes"
+
+	def __unicode__(self):
+		return u'%s' % self.class_grade
+
+####################
+class Classdetails(models.Model):
+	classes = models.ForeignKey(Classes,on_delete=models.CASCADE)
+	teacher = models.ForeignKey(User,default=None,on_delete=models.CASCADE,related_name='teacher')
+	student = models.ForeignKey(User,default=None,on_delete=models.CASCADE,related_name='student')
+
+	# class Meta:
+	# 	db_table = "classdetails"
+	def __str__(self):
+		return self.classes.class_grade

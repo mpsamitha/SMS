@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'content',
     'classes',
     'marks',
+    'exam',
     'timetable',
     'crispy_forms',
 ]

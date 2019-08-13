@@ -51,6 +51,9 @@ background-size:100%; background-attachment: fixed;">
           {% if user.is_authenticated %}<a class="dropdown-item" href="{% url 'subshow' %}">Subjects</a>{% endif %}
           {% if user.is_authenticated %}<a class="dropdown-item" href="{% url 'proshow' %}">Profiles</a>{% endif %}
           {% if user.is_authenticated %}<a class="dropdown-item" href="{% url 'classshow' %}">Classes</a>{% endif %}
+          {% if user.is_authenticated %}<a class="dropdown-item" href="{% url 'attendanceshow' %}">Attendance</a>{% endif %}
+          {% if user.is_authenticated %}<a class="dropdown-item" href="{% url 'examshow' %}">Exam</a>{% endif %}
+          {% if user.is_authenticated %}<a class="dropdown-item" href="{% url 'marksshow' %}">Marks</a>{% endif %}
           <a class="dropdown-item" href="#">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -80,68 +83,6 @@ background-size:100%; background-attachment: fixed;">
   </div>
 </nav>
 <br>
-<!-- 
-<nav class="navbar navbar-dark">
-  <div class="container">
-    <ul class="nav navbar-nav">
-      {# Django Home Link / Admin Link / Register Link#}
-      <li><a class="navbar-brand" href="{% url 'index' %}">Piliyandala Madya Maha Vidyalaya</a></li>
-      <li><a class="navbar-link" href="{% url 'admin:index' %}"><span style="font-size: 2rem;">
-        <span style="color: white;">
-          <i class="fas fa-address-card fa-.5x"></i>
-        </span>
-      </span>Admin</a></li>
-      <li><a class="navbar-link" href="{% url 'log:register' %}"><span style="font-size: 2rem;">
-        <span style="color: white;">
-          <i class="fas fa-address-card fa-.5x"></i>
-        </span>
-      </span>Register</a></li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <span style="font-size: 2rem;">
-            <span style="color: white;">
-              <i class="fas fa-address-card fa-.5x"></i>
-            </span>
-          </span>
-          Profiles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span style="font-size: 2rem;">
-              <span style="color: white;">
-                <i class="fas fa-calendar-plus fa-.5x"></i>
-              </span>
-            </span>
-            Attend</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span style="font-size: 2rem;">
-                <span style="color: white;">
-                  <i class="fas fa-book fa-.5x"></i>
-                </span>
-              </span>
-              Fourm</a>
-            </li>
-            {# Some logic on what to display for last item#}
-            {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}"> <span style="font-size: 2rem;">
-              <span style="color: white;">
-                <i class="fas fa-address-card fa-.5x"></i>
-              </span>
-            </span>Logout</a></li>
-            {% else %}
-            <li><a class="navbar-link" href="{% url 'log:user_login' %}"><span style="font-size: 2rem;">
-              <span style="color: white;">
-                <i class="fas fa-address-card fa-.5x"></i>
-              </span>
-            </span>Login</a></li>
-            {% endif %}
-          </ul>
-        </div>
-      </nav>
-
-      <div class="container"> -->
         {% block body_block %}
         {% endblock %}
       </div>

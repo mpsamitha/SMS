@@ -2,7 +2,7 @@
 {% block body_block %}
 <div class="container">
   <div class="jumbotron">
-    <h1>Welcome to the Djungle !</h1>
+    <h1>Welcome to the Piliyandala Maha Vidyalaya!</h1>
     {% if user.is_authenticated %}
         <h2>Hello {{ user.username }}</h2>
     {% else %}
@@ -18,20 +18,20 @@
             type: 'column'
         },
         title: {
-            text: 'Historic World Population by Region'
+            text: 'School Attendance on this week 2019-June 4th week'
         },
         xAxis: {
-            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania']
+            categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
         },
         series: [{
-            name: 'Year 1800',
-            data: [107, 31, 635, 203, 2]
+            name: 'Grade 10',
+            data: [107, 31, 100, 80, 56]
         }, {
-            name: 'Year 1900',
-            data: [133, 156, 947, 408, 6]
+            name: 'Grade 11',
+            data: [133, 156, 47, 48, 6]
         }, {
-            name: 'Year 2012',
-            data: [1052, 954, 4250, 740, 38]
+            name: 'Grade 12',
+            data: [52, 54, 42, 74, 38]
         }]
     });
   </script>
