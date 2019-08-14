@@ -10,6 +10,8 @@ from marks import views as marks
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views import GeneratePdf
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.index,name='index'),
@@ -43,5 +45,7 @@ urlpatterns = [
     path('marksshow', marks.marksshow, name='marksshow'),
     path('marksupdate/<int:id>', marks.marksupdate, name='marksupdate'),
     path('marksdestroy/<int:id>', marks.marksdestroy, name='marksdestroy'),
+    path('studentreport/<int:id>', marks.studentreport, name='studentreport'),
+    # url(r'^pdf/$',GeneratePdf.as_view()),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

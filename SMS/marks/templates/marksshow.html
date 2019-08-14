@@ -5,64 +5,67 @@
     <h3>Add Marks Details</h3>
 <table class="table table-striped table-bordered table-sm">  
     <thead class="thead-dark">  
+{% for marks in marks %} 
     <tr>    
         <th>User</th>
         <th>Class</th>     
         <th>Exam</th>
-        <th>Subject 1</th>
+        <th>{{ marks.subject1 }}</th>
         <!-- <th>Marks 1</th> -->
-        <th>Subject 2</th>
+        <th>{{ marks.subject2 }}</th>
         <!-- <th>Marks 2</th> -->
-        <th>Subject 3</th>
+        <th>{{ marks.subject3 }}</th>
         <!-- <th>Marks 3</th> -->
-        <th>Subject 4</th>
+        <th>{{ marks.subject4 }}</th>
         <!-- <th>Marks 4</th>         -->
-        <th>Subject 5</th>
+        <th>{{ marks.subject5 }}</th>
         <!-- <th>Marks 5</th> -->
-        <th>Subject 6</th>
+        <th>{{ marks.subject6 }}</th>
         <!-- <th>Marks 6</th> -->
-        <th>Subject 7</th>
+        <th>{{ marks.subject7 }}</th>
         <!-- <th>Marks 7</th> -->
-        <th>Subject 8</th>
+        <th>{{ marks.subject8 }}</th>
         <!-- <th>Marks 8</th> -->
-        <th>Subject 9</th>
+        <th>{{ marks.subject9 }}</th>
         <!-- <th>Marks 9</th> -->
-        <th>Subject 10</th>
+        <th>{{ marks.subject10 }}</th>
         <!-- <th>Marks 10</th> -->
         <th>Total</th>       
         <th>Action</th>  
     </tr>  
-    </thead>  
+    </thead>
+{% endfor %}   
     <tbody>  
 {% for marks in marks %}  
     <tr>    
         <td>{{ marks.user_id }}</td>
         <td>{{ marks.classes }}</td>
         <td>{{ marks.exam}}</td>
-        <td>{{ marks.subject1 }} {{ marks.marks1}}</td>
+        <td>{{ marks.marks1}}</td>
         <!-- <td>{{ marks.marks1}}</td> -->
-        <td>{{ marks.subject2 }} {{ marks.marks2}}</td>
+        <td>{{ marks.marks2}}</td>
         <!-- <td>{{ marks.marks2}}</td> -->
-        <td>{{ marks.subject3 }} {{ marks.marks3}}</td>
+        <td>{{ marks.marks3}}</td>
         <!-- <td>{{ marks.marks3}}</td> -->
-        <td>{{ marks.subject4 }} {{ marks.marks4}}</td>
+        <td>{{ marks.marks4}}</td>
         <!-- <td>{{ marks.marks4}}</td> -->
-        <td>{{ marks.subject5 }} {{ marks.marks5}}</td>
+        <td>{{ marks.marks5}}</td>
         <!-- <td>{{ marks.marks5}}</td> -->
-        <td>{{ marks.subject6}} {{ marks.marks6}}</td>
+        <td>{{ marks.marks6}}</td>
         <!-- <td>{{ marks.marks6}}</td> -->
-        <td>{{ marks.subject7 }} {{ marks.marks7}}</td>
+        <td>{{ marks.marks7}}</td>
         <!-- <td>{{ marks.marks7}}</td> -->
-        <td>{{ marks.subject8 }} {{ marks.marks8}}</td>
+        <td>{{ marks.marks8}}</td>
         <!-- <td>{{ marks.marks8}}</td> -->
-        <td>{{ marks.subject9 }} {{ marks.marks9}}</td>
+        <td>{{ marks.marks9}}</td>
         <!-- <td>{{ marks.marks9}}</td> -->
-        <td>{{ marks.subject10 }} {{ marks.marks10}}</td>
+        <td>{{ marks.marks10}}</td>
         <!-- <td>{{ marks.marks10}}</td> -->
         <td>{{ marks.total}}</td> 
         <td>  
             <a class="btn btn-danger btn-sm" href="/marksdestroy/{{ marks.id }}">Delete</a>
-            <a class="btn btn-primary btn-sm" href="/marksupdate/{{ marks.id }}">Update</a>  
+            <a class="btn btn-primary btn-sm" href="/marksupdate/{{ marks.id }}">Update</a>
+            <a class="btn btn-warning btn-sm" href="/studentreport/{{ marks.id }}">Print</a>  
         </td>  
     </tr>  
 {% endfor %}  

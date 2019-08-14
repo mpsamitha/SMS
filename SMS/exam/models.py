@@ -8,3 +8,6 @@ class Exam(models.Model):
 
 	class Meta:
 		db_table = "exam"
+
+	def __str__(self):
+		return self.exam_name

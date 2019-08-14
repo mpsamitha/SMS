@@ -28,3 +28,11 @@ def marksdestroy(request, id):
     marks = Marks.objects.get(id=id)  
     marks.delete()  
     return redirect("/marksshow") 
+
+def studentreport(request, id):
+    marks = Marks.objects.get(id=id)  
+    form = MarksForm(request.POST, instance = marks)  
+    if form.is_valid():  
+        form.save()  
+        return redirect("/marksshow")  
+    return render(request, 'studentreport.html', {'marks': marks})

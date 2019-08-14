@@ -6,4 +6,7 @@ class Subject(models.Model):
     subject_note = models.CharField(max_length=250)  
     
     class Meta:  
-        db_table = "subject"  
+        db_table = "subject"
+
+    def __str__(self):
+    	return self.subject_name  

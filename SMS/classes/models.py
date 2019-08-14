@@ -59,8 +59,11 @@ class Classes(models.Model):
 		unique_together = ('class_no', 'class_grade',)
 		db_table = "classes"
 
-	def __unicode__(self):
-		return u'%s' % self.class_grade
+	def __str__(self):
+		return self.class_grade
+
+	# def __unicode__(self):
+	# 	return u'%s' % self.class_grade
 
 ####################
 class Classdetails(models.Model):
